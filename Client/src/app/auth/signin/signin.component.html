@@ -1,1 +1,17 @@
-<p>signin works!</p>
+<div class="uk-container uk-margin-medium-top">
+  <fieldset class="uk-fieldset">
+    <legend class="uk-legend">Sign in</legend>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="email" placeholder="Email address" [(ngModel)]="emailAddress" />
+    </div>
+
+    <div class="uk-margin">
+      <input class="uk-input" type="password" placeholder="Password" [(ngModel)]="password" />
+    </div>
+
+    <div class="uk-margin">
+      <button class="uk-button uk-button-primary" (click)="submit()">Submit</button>
+    </div>
+  </fieldset>
+</div>
