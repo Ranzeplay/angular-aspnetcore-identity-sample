@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Server.Controllers
@@ -55,7 +56,7 @@ namespace Server.Controllers
                 });
             }
 
-            return new JsonResult(result.Errors.ToArray());
+            return BadRequest(JsonSerializer.Serialize(result.Errors.ToArray()));
         }
 
         [HttpPost]
@@ -98,7 +99,7 @@ namespace Server.Controllers
                 }
             }
 
-            return Unauthorized("User not found");
+            return Unauthorized("Errors occured while attempting logging in");
         }
     }
 }
